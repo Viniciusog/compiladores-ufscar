@@ -32,10 +32,23 @@ public class Principal {
 
             // Lê conteúdo do arquivo de entrada enquanto não chegar no fim
             while ((token = lexer.nextToken()).getType() != Token.EOF) {
-                String tokenString = "<"+"'"+token.getText()+"'"+","+lexer.VOCABULARY
-                        .getDisplayName(token.getType())+">";
-                sb.append(tokenString);
-                sb.append(System.lineSeparator());    
+                String nomeToken = lexer.VOCABULARY.getDisplayName(token.getType());                              
+                
+                if (nomeToken.equals("ERRO")) {
+                    String erroString = "Linha " + token.getLine()+ ": " + token.getText() + " - simbolo nao identificado";
+                    sb.append(erroString);
+                    sb.append(System.lineSeparator()); 
+                    break;
+                } else if (nomeToken.equals("COMENTARIO_NAO_FECHADO")) {
+                    String erroString = "Linha " + token.getLine() + ": comentario nao fechado";
+                    sb.append(erroString);
+                    sb.append(System.lineSeparator()); 
+                    break;
+                } else {
+                    String tokenString = "<"+"'"+token.getText()+"'"+","+nomeToken+">";
+                    sb.append(tokenString); 
+                    sb.append(System.lineSeparator());    
+                }                              
             }
 
             // Escreve resultado dos tokens no arquivo de saída

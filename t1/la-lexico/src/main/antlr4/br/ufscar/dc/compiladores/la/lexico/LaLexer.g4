@@ -62,6 +62,8 @@ IDENT: ('a'..'z'|'A'..'Z')('a'..'z'|'A'..'Z'|'0'..'9'|'_')*;
 
 CADEIA: '"' ~('"')* '"';
 
+CADEIA_NAO_FECHADA: '"' ~('\n'| '\r' | '"')* '\r'? '\n';
+
 PONTO: '.';
 INTERVALO: '..';
 DOIS_PONTOS: ':';
@@ -72,4 +74,9 @@ ABRECOL: '[';
 FECHACOL: ']';
 
 COMENTARIO: '{' ~('}')* '}' -> skip;
+COMENTARIO_NAO_FECHADO: '{' ~('\n'| '\r' | '}')* '\r'? '\n';
+
 WS: (' ' | '\t' | '\r' | '\n') -> skip;
+
+
+ERRO: .;

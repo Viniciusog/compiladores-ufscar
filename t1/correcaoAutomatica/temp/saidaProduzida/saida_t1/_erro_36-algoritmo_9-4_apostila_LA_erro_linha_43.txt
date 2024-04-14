@@ -148,3 +148,19 @@
 <'e','e'>
 <'", segundoReal, "',CADEIA>
 <'eh',IDENT>
+<'", 
+',CADEIA_NAO_FECHADA>
+<'menorReal',IDENT>
+<'(','('>
+<'modulo',IDENT>
+<'(','('>
+<'primeiroReal',IDENT>
+<')',')'>
+<',',','>
+<'modulo',IDENT>
+<'(','('>
+<'segundoReal',IDENT>
+<')',')'>
+<')',')'>
+<')',')'>
+<'fim_algoritmo','fim_algoritmo'>
