@@ -60,9 +60,15 @@ NUM_REAL: ('0'..'9')+ '.' ('0'..'9')+;
 
 IDENT: ('a'..'z'|'A'..'Z')('a'..'z'|'A'..'Z'|'0'..'9'|'_')*;
 
-CADEIA: '"' ~('"')* '"';
+CADEIA: '"' ('\\"' | ~('"' | '\\' | '\n'))* '"';
 
-CADEIA_NAO_FECHADA: '"' ~('\n'| '\r' | '"')* '\r'? '\n';
+CADEIA_NAO_FECHADA: '"' ('\\"' | ~('"' | '\\' | '\n'))* '\n';
+
+//CADEIA_NAO_FECHADA: '"' ~('"')* '\r'? '\n'?;
+//CADEIA: '"' ~('"')* '"';
+
+
+//'"' ~('"')* '\r'? '\n';
 
 PONTO: '.';
 INTERVALO: '..';
@@ -73,8 +79,8 @@ VIRGULA: ',';
 ABRECOL: '[';
 FECHACOL: ']';
 
-COMENTARIO: '{' ~('}')* '}' -> skip;
-COMENTARIO_NAO_FECHADO: '{' ~('\n'| '\r' | '}')* '\r'? '\n';
+COMENTARIO: '{' ~('\n' | '\r' | '}')* '}' -> skip;
+COMENTARIO_NAO_FECHADO: '{' ~('}')* '\n';
 
 WS: (' ' | '\t' | '\r' | '\n') -> skip;
 

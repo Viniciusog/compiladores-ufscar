@@ -44,6 +44,11 @@ public class Principal {
                     sb.append(erroString);
                     sb.append(System.lineSeparator()); 
                     break;
+                } else if (nomeToken.equals("CADEIA_NAO_FECHADA"))  {
+                    String erroString = "Linha " + token.getLine() + ": cadeia literal nao fechada";
+                    sb.append(erroString);
+                    sb.append(System.lineSeparator()); 
+                    break;
                 } else {
                     String tokenString = "<"+"'"+token.getText()+"'"+","+nomeToken+">";
                     sb.append(tokenString); 
