@@ -64,12 +64,6 @@ CADEIA: '"' ('\\"' | ~('"' | '\\' | '\n'))* '"';
 
 CADEIA_NAO_FECHADA: '"' ('\\"' | ~('"' | '\\' | '\n'))* '\n';
 
-//CADEIA_NAO_FECHADA: '"' ~('"')* '\r'? '\n'?;
-//CADEIA: '"' ~('"')* '"';
-
-
-//'"' ~('"')* '\r'? '\n';
-
 PONTO: '.';
 INTERVALO: '..';
 DOIS_PONTOS: ':';
