@@ -1,6 +1,6 @@
 ## Como rodar?
 
-### Rodar o projeto por meio do arquivo JAR que nós geramos
+### Rodar o nosso analisador léxico
 Entre na pasta t1 <br>
 Entre na pasta la-lexico
 
@@ -19,16 +19,15 @@ java -jar ./target/la-lexico-1.0-SNAPSHOT-jar-with-dependencies.jar entrada.txt 
 ```
 Pronto, o resultado gerado pelo analisador léxico estará no arquivo saida.txt dentro da pasta la-lexico.
 
-
 ## Rodando o corretor automático
+(Obs: Todos os resultados gerados pelo corretor automático já estão dentro do diretório t1/correcaoAutomatica/temp/saidaProduzida/saida_t1)
+
+Entre na pasta t1 <br>
+Entre na pasta correcaoAutomatica
+
 Com terminal aberto na pasta correcaoAutomatica insira no terminal: <br>
 ```
-java -jar compiladores-corretor-automatico-1.0-SNAPSHOT-jar-with-dependencies.jar "java -jar ../la-lexico/target/la-lexico-1.0-SNAPSHOT-jar-with-dependencies.jar" gcc temp casos-de-teste "colocar os ra's dos participantes aqui" t1
+java -jar compiladores-corretor-automatico-1.0-SNAPSHOT-jar-with-dependencies.jar "java -jar ../la-lexico/target/la-lexico-1.0-SNAPSHOT-jar-with-dependencies.jar" gcc temp casos-de-teste "802431 801904 799657" t1
 ```
 
-
-
-
-
-
-
+O resultado gerado pelo corretor automático vai estar na pasta /temp/saidaProduzida/saida_t1
