@@ -1,15 +1,26 @@
-#### Uso do maven e geração do JAR
-mvn clean -> Remove os conteúdos gerados na pasta target <br>
-mvn generate-sources -> Gera os arquivos necessários para o programa antes da compilação, executa plugins, etc <br>
-mvn package -> Compila o projeto e coloca na pasta target <br>
-java -jar local-do-jar local-arquivo-entrada local-arquivo-saida -> Executa o programa <br>
+## Como rodar?
 
-#### Usando mvn exec para rodar o programa sem gerar jar
+### Rodar o projeto por meio do arquivo JAR que nós geramos
+Entre na pasta t1 <br>
+Entre na pasta la-lexico
+
+Insira no arquivo **entrada.txt** o conteúdo que o analisador léxico vai ler.
+
+(Opcional) Você pode escolher compilar o projeto do zero ou não (Nós já compilamos e deixamos o arquivo JAR do projeto pronto aqui no GitHub)
 ```
-mvn exec:java -Dexec.mainClass="br.ufscar.dc.compiladores.la.lexico.Principal" -Dexec.args="local-arquivo-entrada local-arquivo-saida"
+mvn clean
+mvn generate-sources
+mvn package
 ```
 
-#### Rodando o corretor automático
+No terminal, execute:
+```
+java -jar ./target/la-lexico-1.0-SNAPSHOT-jar-with-dependencies.jar entrada.txt saida.txt
+```
+Pronto, o resultado gerado pelo analisador léxico estará no arquivo saida.txt dentro da pasta la-lexico.
+
+
+## Rodando o corretor automático
 Com terminal aberto na pasta correcaoAutomatica insira no terminal: <br>
 ```
 java -jar compiladores-corretor-automatico-1.0-SNAPSHOT-jar-with-dependencies.jar "java -jar ../la-lexico/target/la-lexico-1.0-SNAPSHOT-jar-with-dependencies.jar" gcc temp casos-de-teste "colocar os ra's dos participantes aqui" t1
