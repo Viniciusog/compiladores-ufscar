@@ -1,3 +1,14 @@
+## Alunos:
+Vinícius de Oliveira Guimarães <br>
+Vitor Kasai Tanoue <br>
+Karen Barcelos
+
+## Pré-requisitos:
+```
+Java JDK 17
+Apache Maven 3.9.1
+```
+
 ## Como rodar?
 
 ### Rodar o nosso analisador léxico
@@ -8,12 +19,13 @@ Insira no arquivo **entrada.txt** o conteúdo que o analisador léxico vai ler.
 
 (Opcional) Você pode escolher compilar o projeto do zero ou não (Nós já compilamos e deixamos o arquivo JAR do projeto pronto aqui no GitHub)
 ```
+// compilando o projeto do zero
 mvn clean
 mvn generate-sources
 mvn package
 ```
 
-No terminal, execute:
+Agora, no terminal, execute:
 ```
 java -jar ./target/la-lexico-1.0-SNAPSHOT-jar-with-dependencies.jar entrada.txt saida.txt
 ```
