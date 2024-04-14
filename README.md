@@ -1,23 +1,45 @@
-#### Uso do maven e geração do JAR
-mvn clean -> Remove os conteúdos gerados na pasta target <br>
-mvn generate-sources -> Gera os arquivos necessários para o programa antes da compilação, executa plugins, etc <br>
-mvn package -> Compila o projeto e coloca na pasta target <br>
-java -jar local-do-jar local-arquivo-entrada local-arquivo-saida -> Executa o programa <br>
+## Alunos:
+Vinícius de Oliveira Guimarães <br>
+Vitor Kasai Tanoue <br>
+Karen Barcelos
 
-#### Usando mvn exec para rodar o programa sem gerar jar
+## Pré-requisitos:
 ```
-mvn exec:java -Dexec.mainClass="br.ufscar.dc.compiladores.la.lexico.Principal" -Dexec.args="local-arquivo-entrada local-arquivo-saida"
+Java JDK 17
+Apache Maven 3.9.1
 ```
 
-#### Rodando o corretor automático
+## Como rodar?
+
+### Rodar o nosso analisador léxico
+Entre na pasta t1 <br>
+Entre na pasta la-lexico
+
+Insira no arquivo **entrada.txt** o conteúdo que o analisador léxico vai ler.
+
+(Opcional) Você pode escolher compilar o projeto do zero ou não (Nós já compilamos e deixamos o arquivo JAR do projeto pronto aqui no GitHub)
+```
+// compilando o projeto do zero
+mvn clean
+mvn generate-sources
+mvn package
+```
+
+Agora, no terminal, execute:
+```
+java -jar ./target/la-lexico-1.0-SNAPSHOT-jar-with-dependencies.jar entrada.txt saida.txt
+```
+Pronto, o resultado gerado pelo analisador léxico estará no arquivo saida.txt dentro da pasta la-lexico.
+
+## Rodando o corretor automático
+(Obs: Todos os resultados gerados pelo corretor automático já estão dentro do diretório t1/correcaoAutomatica/temp/saidaProduzida/saida_t1)
+
+Entre na pasta t1 <br>
+Entre na pasta correcaoAutomatica
+
 Com terminal aberto na pasta correcaoAutomatica insira no terminal: <br>
 ```
-java -jar compiladores-corretor-automatico-1.0-SNAPSHOT-jar-with-dependencies.jar "java -jar ../la-lexico/target/la-lexico-1.0-SNAPSHOT-jar-with-dependencies.jar" gcc temp casos-de-teste "colocar os ra's dos participantes aqui" t1
+java -jar compiladores-corretor-automatico-1.0-SNAPSHOT-jar-with-dependencies.jar "java -jar ../la-lexico/target/la-lexico-1.0-SNAPSHOT-jar-with-dependencies.jar" gcc temp casos-de-teste "802431 801904 799657" t1
 ```
 
-
-
-
-
-
-
+O resultado gerado pelo corretor automático vai estar na pasta /temp/saidaProduzida/saida_t1
