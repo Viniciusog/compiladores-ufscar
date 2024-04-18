@@ -1,6 +1,6 @@
 ## Alunos:
 Vinícius de Oliveira Guimarães <br>
-Vitor Kasai Tanoue <br>
+Vitor Kasai Tanoue, 801904<br>
 Karen Barcelos
 
 ## Pré-requisitos:
