@@ -1,7 +1,7 @@
 ## Alunos:
-Vinícius de Oliveira Guimarães <br>
+Vinícius de Oliveira Guimarães, 802431<br>
 Vitor Kasai Tanoue, 801904<br>
-Karen Barcelos
+Karen Barcelos, 799657
 
 ## Pré-requisitos:
 ```
